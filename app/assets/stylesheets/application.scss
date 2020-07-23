@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+.space{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.notice{
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: green;
+	padding-top: 10px;
+}
+
+.Bookers{
+	font-size: 25px;
+	padding-top: 10px;
+	color: white;
+}
+
+.password{
+	padding-top: 80px;
+}
+
+.title{
+	padding-top: 80px;
+}
+
+.login{
+	padding-top: 80px;
+}
+
+.about{
+	padding-top: 80px;
+}
+
+
+.signup{
+	padding-top: 80px;
+}
+
+.container10{
+	padding-top: 80px;
+}
+.container126{
+	padding-top: 80px;
+}
+
+.books{
+	padding-top: 80px;
+}
+
+.dora{
+	margin: 0;
+}
+
+.dora1{
+	margin: 10;
+}
+
+.container125{
+	padding-top: 80px;
+}
+
+.container127{
+	padding-top: 80px;
+}
+
+.container132{
+	padding-top: 80px;
+}
+
+.actions{
+	padding-top: 10px;
+	padding-bottom :10px;
+}
+
+.Books100{
+	padding-top: 80px;
+}
+
+.containers{
+	padding-left: 15px;
+}
+
+.containers1{
+	padding-left: 25px;
+}
+
+.button20{
+	padding-right: 20px
+}
+
+.editing{
+	margin-bottom: 10px;
+	font-size: 36px;
+}
+
+

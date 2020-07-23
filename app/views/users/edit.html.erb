@@ -1,0 +1,41 @@
+
+
+<div class="container125">
+  <div class="space">
+	<div class="row">
+
+		<% if @user.errors.any? %>
+  　　　    <div class="alert alert-warning">
+    　　    <ul>
+    	　<div>There is an error.</div>
+     　　 <% @user.errors.full_messages.each do |message| %>
+        　<li><%= message %></li>
+      　　<% end %>
+         </ul>
+          </div>
+           <% end %>
+
+
+           
+		<div class="col-md-3">
+
+			<h3>User info</h3>
+
+	        <%=form_for(@user) do |f| %>
+			<h4>Name</h4>
+			<%=f.text_field :name %>
+
+			<h4>Image</h4>
+			<%=f.attachment_field :profile_image %>
+
+			<h4>Introduction</h4>
+			<%=f.text_area :introduction %>
+			<%=f.submit "Update User" %>
+			<% end %>
+		</div>
+
+		<div class="col-md-9"></div>
+	 </div>
+</div>
+
+
