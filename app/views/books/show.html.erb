@@ -41,7 +41,7 @@
 			<!-- ボタンの処理-->
 
 			<h3 class="new_book">New book</h3>
-			<%=form_for(Book.new) do |f| %>
+			<%=form_with model:@book do |f| %>
 
 			<h4>Title</h4>
 			<%=f.text_field :title,class:"btn-block" %>
@@ -56,38 +56,21 @@
 		<div class="col-xs-9">
 
 			<h3>Book detail</h3>
-			<table class="table table-hover table-invrese">
-				<thead>
-					<tr>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
 
-				<tbody>
-					<tr>
-					  <td><%=link_to user_path(@user.id) do %>
-					  	  <%=attachment_image_tag @book.user, :profile_image, size: "40x40", format: 'jpeg', class: "img-circle", fallback: "no_image.jpg" %><br>
-					  	  <%=link_to @user.name,user_path(@user.id) %>
-					  	  <% end %>
-					  </td>
-					  <td>
-						  <%=link_to @book.title, book_path(@book.id) %>
-					  </td>
-					  <td>
-						  <%=@book.body %>
-					  </td>
-					  <td>
-					  	<% if @user.id==current_user.id %>
-					      <span class="button20"><%=link_to "Edit" , edit_book_path(@book.id),class:"btn btn-success btn-sm" %></span>
-					      <span class="abc"><%=link_to "Destroy" , book_path(@book.id), method: :delete,"data-confirm"=>"本当に削除しますか?",class:"btn btn-danger btn-sm" %></span>
-					      <% end %>
-					  </td>
-					</tr>
-				</tbody>
-			</table>
+			<div id="show_favorite_<%= @book.id %>">
+              <%= render 'favorites/favorite', book: @book %>
+            </div>
+
+            <div id="comments_area">
+            	<%= render partial: 'comments/index', locals: { comments: @comments } %>
+		   </div>
+
+			<%=form_with(model:[@book, @comment]) do |f| %>
+			<%#= form_with(model: [book, comment], url: request.referer(@book) ) do |f| %>
+			<%#ルーティングを変更したい際にurl: を用いる。%>
+			<%=f.text_area :comment, class:"btn-block" %>
+			<%=f.submit "送信" %>
+			<% end %>
 		</div>
 	</div>
  </div>
