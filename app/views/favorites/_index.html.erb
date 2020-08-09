@@ -1,0 +1,17 @@
+<% if book.favorited_by?(current_user) %>
+						<td>
+							<%#= link_to book_favorites_path(book.id),method: :delete do %>
+							<%= link_to book_favorites_path(book.id),method: :delete, remote:true do %>
+							<%#= link_to book_favorite_path(book.id),method: :delete do %>
+							    <span class="glyphicon glyphicon-heart"></span>
+                                <%= book.favorites.count %>
+                        	<% end %>
+                        </td>
+                        <% else %>
+                        <td>
+                        	<%= link_to book_favorites_path(book.id),method: :post, remote:true do %>
+                                <span class="glyphicon glyphicon-heart-empty"></span>
+                                <%= book.favorites.count %>
+                             <% end %>
+                        </td>
+                        <% end %>

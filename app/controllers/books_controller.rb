@@ -28,6 +28,7 @@ class BooksController < ApplicationController
     @book_new =  Book.new
     @user = @book.user
     @comment = Comment.new
+    @comments = @book.comments
   end
 
   def edit
@@ -56,6 +57,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :use_id)
+    params.require(:book).permit(:title, :body, :use_id)
   end
 end

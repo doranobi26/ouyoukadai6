@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :book
   #バリデーション
-  validates :content, presence: true
+  validates :comment, presence: true
 
 end

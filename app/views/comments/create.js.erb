@@ -1,0 +1,4 @@
+$("#comments_area").html("<%= j(render 'index', { comments: @comment.book.comments }) %>")
+$(".show_favorite_<%= @book.id %>").html("<%= j(render partial: 'favorites/favorite', locals: { book: @book}) %>");
+$("textarea").val('')
+$(".comment_count").html("<%= j(render partial: 'comments/count', locals: {book: @book})%>");

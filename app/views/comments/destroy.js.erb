@@ -1,0 +1,2 @@
+$("#comments_area").html("<%= j(render 'index', { comments: @book.comments }) %>")
+$(".comment_count").html("<%= j(render partial: 'comments/count', locals: {book: @book})%>");
